@@ -1,0 +1,4 @@
+{
+   "extends": "./node_modules/@toba/lint/ts/config",
+   "include": ["generators/**/*.ts"]
+}
