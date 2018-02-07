@@ -45,8 +45,8 @@ export class TobaGenerator extends Generator {
 
       [
          'index.ts',
-         'LICENSE',
          'jest.config.js',
+         'LICENSE',
          'package.json',
          'README.md',
          'tsconfig.json',

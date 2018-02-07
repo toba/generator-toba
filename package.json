@@ -1,18 +1,21 @@
 {
    "name": "generator-toba",
-   "version": "1.0.1",
+   "version": "1.0.3",
    "description": "Yeoman Generator for Toba TypeScript modules",
    "preferGlobal": true,
+   "homepage": "https://github.com/toba/generator-toba",
    "author": {
       "name": "Jason Abbott",
       "url": "http://github.com/toba"
    },
    "files": [
-      "generators/app/templates",
+      "generators/app/templates/**/*",
       "generators/app/app.js",
       "generators/app/index.js"
    ],
-   "keywords": ["yeoman-generator"],
+   "keywords": [
+      "yeoman-generator"
+   ],
    "license": "MIT",
    "dependencies": {
       "@types/yeoman-generator": "^2.0.1",
