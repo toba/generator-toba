@@ -30,11 +30,14 @@ class TobaGenerator extends Generator {
             const fn = filename.replace('_', '.');
             this.fs.copyTpl(this.templatePath(filename), this.destinationPath(fn), this.props);
         });
+        ['__package.json'].forEach(filename => {
+            const fn = filename.replace('__', '');
+            this.fs.copyTpl(this.templatePath(filename), this.destinationPath(fn), this.props);
+        })
         [
             'index.ts',
             'LICENSE',
             'jest.config.js',
-            'package.json',
             'README.md',
             'tsconfig.json',
             'tslint.json'
