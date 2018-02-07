@@ -44,9 +44,9 @@ class TobaGenerator extends Generator {
         return this.appname.trim().replace(/\s+/g, '-');
     }
     _copy(files, rename = n => n) {
-        files.forEach(f => {
-            f = rename(f);
-            this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
+        files.forEach(source => {
+            const target = rename(source);
+            this.fs.copyTpl(this.templatePath(source), this.destinationPath(target), this.props);
         });
     }
 }

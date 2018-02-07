@@ -58,11 +58,11 @@ export class TobaGenerator extends Generator {
     * Copy template files with optional file rename.
     */
    _copy(files: string[], rename: (n: string) => string = n => n) {
-      files.forEach(f => {
-         f = rename(f);
+      files.forEach(source => {
+         const target = rename(source);
          this.fs.copyTpl(
-            this.templatePath(f),
-            this.destinationPath(f),
+            this.templatePath(source),
+            this.destinationPath(target),
             this.props
          );
       })
