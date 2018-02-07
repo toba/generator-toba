@@ -21,7 +21,7 @@ npm install -g generator-toba
 
 ### Or just upgrade to the latest versions
 
-ls```bash
+```bash
 yarn global upgrade
 ```
 

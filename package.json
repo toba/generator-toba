@@ -1,6 +1,6 @@
 {
    "name": "generator-toba",
-   "version": "1.0.6",
+   "version": "1.0.7",
    "description": "Yeoman Generator for Toba TypeScript modules",
    "preferGlobal": true,
    "homepage": "https://github.com/toba/generator-toba",
@@ -25,6 +25,9 @@
       "yeoman-generator"
    ],
    "license": "MIT",
+   "scripts": {
+      "prepare": "./node_modules/.bin/tsc"
+   },
    "dependencies": {
       "@types/yeoman-generator": "^2.0.1",
       "yeoman-generator": "^2.0.2"

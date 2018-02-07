@@ -8,7 +8,7 @@ class TobaGenerator extends Generator {
             name: ''
         };
         this.props = {
-            name: this.appname.trim().replace(/\s+/g, '-')
+            name: this._defaultName
         };
     }
     prompting() {
@@ -17,7 +17,7 @@ class TobaGenerator extends Generator {
                 type: 'input',
                 name: 'name',
                 message: 'What would you like to name the Toba module?',
-                default: this.appname.trim().replace(/\s+/g, '-'),
+                default: this._defaultName,
                 validate: (_name) => true
             }
         ];
@@ -26,27 +26,28 @@ class TobaGenerator extends Generator {
         });
     }
     writing() {
-        ['_gitignore', '_travis.yml'].forEach(filename => {
-            const fn = filename.replace('_', '.');
-            this.fs.copyTpl(this.templatePath(filename), this.destinationPath(fn), this.props);
-        });
-        ['__package.json'].forEach(filename => {
-            const fn = filename.replace('__', '');
-            this.fs.copyTpl(this.templatePath(filename), this.destinationPath(fn), this.props);
-        })
-        [
+        this._copy(['_gitignore', '_travis.yml'], n => n.replace('_', '.'));
+        this._copy(['__package.json'], n => n.replace('__', ''));
+        this._copy([
             'index.ts',
-            'LICENSE',
             'jest.config.js',
+            'LICENSE',
             'README.md',
             'tsconfig.json',
             'tslint.json'
-        ].forEach(filename => {
-            this.fs.copyTpl(this.templatePath(filename), this.destinationPath(filename), this.props);
-        });
+        ]);
     }
     install() {
         this.yarnInstall();
+    }
+    get _defaultName() {
+        return this.appname.trim().replace(/\s+/g, '-');
+    }
+    _copy(files, rename = n => n) {
+        files.forEach(f => {
+            f = rename(f);
+            this.fs.copyTpl(this.templatePath(f), this.destinationPath(f), this.props);
+        });
     }
 }
 exports.TobaGenerator = TobaGenerator;
