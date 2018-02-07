@@ -17,8 +17,15 @@ npm install -g generator-toba
 
 ```
 
-### Run the generator inside a new module folder
+### Or just upgrade to the latest versions
+
+ls```bash
+yarn global upgrade
 ```
+
+### Then run the generator inside a new module folder
+
+```bash
 yo toba
 ```
 

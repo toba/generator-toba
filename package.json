@@ -1,6 +1,6 @@
 {
    "name": "generator-toba",
-   "version": "1.0.3",
+   "version": "1.0.4",
    "description": "Yeoman Generator for Toba TypeScript modules",
    "preferGlobal": true,
    "homepage": "https://github.com/toba/generator-toba",
@@ -9,7 +9,15 @@
       "url": "http://github.com/toba"
    },
    "files": [
-      "generators/app/templates/**/*",
+      "generators/app/templates/_gitignore",
+      "generators/app/templates/_travis.yml",
+      "generators/app/templates/index.ts",
+      "generators/app/templates/jest.config.js",
+      "generators/app/templates/LICENSE",
+      "generators/app/templates/package.json",
+      "generators/app/templates/README.md",
+      "generators/app/templates/tsconfig.json",
+      "generators/app/templates/tslint.json",
       "generators/app/app.js",
       "generators/app/index.js"
    ],
