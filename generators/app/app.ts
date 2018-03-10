@@ -13,7 +13,7 @@ export class TobaGenerator extends Generator {
       super(args, options);
 
       this.props = {
-         name: this._defaultName
+         name: this.defaultName
       };
    }
 
@@ -23,7 +23,7 @@ export class TobaGenerator extends Generator {
             type: 'input',
             name: 'name',
             message: 'What would you like to name the Toba module?',
-            default: this._defaultName,
+            default: this.defaultName,
             validate: (_name: string) => true
          }
       ];
@@ -34,9 +34,11 @@ export class TobaGenerator extends Generator {
    }
 
    writing() {
-      this._copy(['_gitignore', '_travis.yml'], n => n.replace('_', '.'));
-      this._copy(['__package.json'], n => n.replace('__', ''));
-      this._copy([
+      this.copy(['_gitignore', '_travis.yml', '_vscode'], n =>
+         n.replace('_', '.')
+      );
+      this.copy(['__package.json'], n => n.replace('__', ''));
+      this.copy([
          'index.ts',
          'jest.config.js',
          'LICENSE',
@@ -50,14 +52,16 @@ export class TobaGenerator extends Generator {
       this.yarnInstall();
    }
 
-   get _defaultName(): string {
-      return this.appname.trim().replace(/\s+/g, '-')
+   private get defaultName(): string {
+      return this.appname.trim().replace(/\s+/g, '-');
    }
 
    /**
     * Copy template files with optional file rename.
+    *
+    * http://yeoman.io/authoring/file-system.html
     */
-   _copy(files: string[], rename: (n: string) => string = n => n) {
+   private copy(files: string[], rename: (n: string) => string = n => n) {
       files.forEach(source => {
          const target = rename(source);
          this.fs.copyTpl(
@@ -65,6 +69,6 @@ export class TobaGenerator extends Generator {
             this.destinationPath(target),
             this.props
          );
-      })
+      });
    }
 }

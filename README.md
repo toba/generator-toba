@@ -12,16 +12,17 @@ The `package.json` template file must be published with a different name or it a
 ### Install Yeoman and the Toba Generator
 
 Yarn
+
 ```bash
 yarn global add yo
 yarn global add generator-toba
 ```
 
 or npm
+
 ```bash
 npm install -g yo
 npm install -g generator-toba
-
 ```
 
 ### Or just upgrade to the latest versions
@@ -36,3 +37,10 @@ yarn global upgrade
 yo toba
 ```
 
+## Development
+
+From within the repository
+
+```bash
+ npm link
+```

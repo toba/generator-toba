@@ -3,11 +3,10 @@
    "compilerOptions": {
       "target": "es6"
    },
-   "include": [
-      "generators/**/*.ts"
-   ],
+   "include": ["generators/**/*.ts"],
    "exclude": [
       "node_modules",
-      "generators/app/templates"
+      "generators/app/templates",
+      "generators/app/app.test.ts"
    ]
 }
