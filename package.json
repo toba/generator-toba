@@ -43,9 +43,9 @@
       "@toba/test": "^1.8.0",
       "@types/node": "^9.4.7",
       "@types/yeoman-test": "^1.7.3",
-      "typescript": "^2.7.1",
       "yeoman-assert": "^3.1.0",
-      "yeoman-test": "^1.7.0"
+      "yeoman-test": "^1.7.0",
+      "prettier": "^1.11.1"
    },
    "repository": {
       "type": "git",
