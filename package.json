@@ -24,7 +24,9 @@
       "generators/app/app.js",
       "generators/app/index.js"
    ],
-   "keywords": ["yeoman-generator"],
+   "keywords": [
+      "yeoman-generator"
+   ],
    "license": "MIT",
    "scripts": {
       "prepare": "./node_modules/.bin/tsc",
@@ -43,9 +45,10 @@
       "@toba/test": "^1.8.0",
       "@types/node": "^9.4.7",
       "@types/yeoman-test": "^1.7.3",
+      "prettier": "^1.11.1",
+      "typescript": "^2.7.2",
       "yeoman-assert": "^3.1.0",
-      "yeoman-test": "^1.7.0",
-      "prettier": "^1.11.1"
+      "yeoman-test": "^1.7.0"
    },
    "repository": {
       "type": "git",

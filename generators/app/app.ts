@@ -34,9 +34,7 @@ export class TobaGenerator extends Generator {
    }
 
    writing() {
-      this.copy(['_gitignore', '_travis.yml', '_vscode'], n =>
-         n.replace('_', '.')
-      );
+      this.copy(['_gitignore', '_travis.yml'], n => n.replace('_', '.'));
       this.copy(['__package.json'], n => n.replace('__', ''));
       this.copy([
          'index.ts',

@@ -41,6 +41,7 @@ class TobaGenerator extends Generator {
         this.yarnInstall();
     }
     get defaultName() {
+        debugger;
         return this.appname.trim().replace(/\s+/g, '-');
     }
     copy(files, rename = n => n) {

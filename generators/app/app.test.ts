@@ -7,7 +7,7 @@ import * as path from 'path';
 
 test('generates files', () =>
    helpers
-      .run(path.join(__dirname, '../app'))
+      .run(path.join(__dirname, '..', 'app'))
       // .withOptions({ foo: 'bar' })
       //.withArguments(['name-x'])
       .withPrompts({ name: 'test-name', appName: 'test' })
