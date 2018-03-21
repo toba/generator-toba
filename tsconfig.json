@@ -1,12 +1,13 @@
 {
    "extends": "./node_modules/@toba/lint/ts/config",
-   // "compilerOptions": {
-   //    "target": "es6"
-   // },
-   "include": ["generators/**/*.ts"],
+   "compilerOptions": {
+      "target": "es2017",
+      "outDir": "generators/app/"
+   },
+   "include": ["generators/src/*.ts"],
    "exclude": [
       "node_modules",
       "generators/app/templates",
-      "generators/app/app.test.ts"
+      "generators/src/app.test.ts"
    ]
 }

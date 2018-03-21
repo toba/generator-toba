@@ -13,9 +13,6 @@
             "--inspect-brk",
             "./node_modules/.bin/jest",
             "--runInBand"
-            // "client.test.ts",
-            // "--testNamePattern",
-            // "EXIF"
          ],
          "cwd": "${workspaceRoot}"
       }

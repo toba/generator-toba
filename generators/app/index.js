@@ -1,4 +1,4 @@
-'use strict';
-
-const { TobaGenerator } = require('./app.js');
-module.exports = TobaGenerator;
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var app_1 = require("./app");
+exports.TobaGenerator = app_1.TobaGenerator;
