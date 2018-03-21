@@ -8,7 +8,7 @@ class TobaGenerator extends Generator {
             name: ''
         };
         this.props = {
-            name: this.defaultName
+            name: this.defaultName()
         };
     }
     prompting() {
@@ -17,7 +17,7 @@ class TobaGenerator extends Generator {
                 type: 'input',
                 name: 'name',
                 message: 'What would you like to name the Toba module?',
-                default: this.defaultName,
+                default: this.defaultName(),
                 validate: (_name) => true
             }
         ];
@@ -26,27 +26,16 @@ class TobaGenerator extends Generator {
         });
     }
     writing() {
-        this.copy([
-            '-.gitignore',
-            '-.travis.yml',
-            '-index.ts',
-            '-jest.config.js',
-            '-LICENSE',
-            '-package.json',
-            '-README.md',
-            '-tsconfig.json',
-            '-tslint.json'
-        ]);
+        this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-.gitignore', '-.travis.yml', '-index.ts', '-jest.config.js', '-LICENSE', '-package.json', '-README.md', '-tsconfig.json', '-tslint.json');
     }
     install() {
-        this.yarnInstall();
     }
-    get defaultName() {
+    defaultName() {
         return this.appname.trim().replace(/\s+/g, '-');
     }
-    copy(files) {
+    copy(...files) {
         files.forEach(source => {
-            const target = source.replace(/^\-/, '');
+            const target = source.replace(/(\/|^)(\-)/g, '$1');
             this.fs.copyTpl(this.templatePath(source), this.destinationPath(target), this.props);
         });
     }

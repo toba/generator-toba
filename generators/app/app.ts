@@ -13,7 +13,7 @@ export class TobaGenerator extends Generator {
       super(args, options);
 
       this.props = {
-         name: this.defaultName
+         name: this.defaultName()
       };
    }
 
@@ -23,7 +23,7 @@ export class TobaGenerator extends Generator {
             type: 'input',
             name: 'name',
             message: 'What would you like to name the Toba module?',
-            default: this.defaultName,
+            default: this.defaultName(),
             validate: (_name: string) => true
          }
       ];
@@ -34,7 +34,10 @@ export class TobaGenerator extends Generator {
    }
 
    writing() {
-      this.copy([
+      this.copy(
+         '-.vscode/-launch.json',
+         '-.vscode/-settings.json',
+         '-.vscode/-tasks.json',
          '-.gitignore',
          '-.travis.yml',
          '-index.ts',
@@ -44,14 +47,15 @@ export class TobaGenerator extends Generator {
          '-README.md',
          '-tsconfig.json',
          '-tslint.json'
-      ]);
+      );
    }
 
    install() {
-      this.yarnInstall();
+      //this.yarnInstall();
    }
 
-   private get defaultName(): string {
+   private defaultName(): string {
+      // cannot be getter since that causes `this` to be wrong
       return this.appname.trim().replace(/\s+/g, '-');
    }
 
@@ -60,9 +64,9 @@ export class TobaGenerator extends Generator {
     *
     * http://yeoman.io/authoring/file-system.html
     */
-   private copy(files: string[]) {
+   private copy(...files: string[]) {
       files.forEach(source => {
-         const target = source.replace(/^\-/, '');
+         const target = source.replace(/(\/|^)(\-)/g, '$1');
          this.fs.copyTpl(
             this.templatePath(source),
             this.destinationPath(target),

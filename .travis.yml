@@ -7,11 +7,6 @@ branches:
   only:
   - master
 
-script:
-  - yarn global add codecov
-  - yarn test
-  - codecov
-
 sudo: false
 
 before_install:
