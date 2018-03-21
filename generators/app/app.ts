@@ -34,15 +34,16 @@ export class TobaGenerator extends Generator {
    }
 
    writing() {
-      this.copy(['_gitignore', '_travis.yml'], n => n.replace('_', '.'));
-      this.copy(['__package.json'], n => n.replace('__', ''));
       this.copy([
-         'index.ts',
-         'jest.config.js',
-         'LICENSE',
-         'README.md',
-         'tsconfig.json',
-         'tslint.json'
+         '-.gitignore',
+         '-.travis.yml',
+         '-index.ts',
+         '-jest.config.js',
+         '-LICENSE',
+         '-package.json',
+         '-README.md',
+         '-tsconfig.json',
+         '-tslint.json'
       ]);
    }
 
@@ -59,9 +60,9 @@ export class TobaGenerator extends Generator {
     *
     * http://yeoman.io/authoring/file-system.html
     */
-   private copy(files: string[], rename: (n: string) => string = n => n) {
+   private copy(files: string[]) {
       files.forEach(source => {
-         const target = rename(source);
+         const target = source.replace(/^\-/, '');
          this.fs.copyTpl(
             this.templatePath(source),
             this.destinationPath(target),
