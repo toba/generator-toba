@@ -9,24 +9,22 @@
       "url": "http://github.com/toba"
    },
    "files": [
-      "generators/app/templates/__package.json",
-      "generators/app/templates/_gitignore",
-      "generators/app/templates/_travis.yml",
-      "generators/app/templates/index.ts",
-      "generators/app/templates/jest.config.js",
-      "generators/app/templates/LICENSE",
-      "generators/app/templates/README.md",
-      "generators/app/templates/tsconfig.json",
-      "generators/app/templates/tslint.json",
-      "generators/app/templates/_vscode/launch.json",
-      "generators/app/templates/_vscode/settings.json",
-      "generators/app/templates/_vscode/tasks.json",
+      "generators/app/templates/-.gitignore",
+      "generators/app/templates/-.travis.yml",
+      "generators/app/templates/-index.ts",
+      "generators/app/templates/-jest.config.js",
+      "generators/app/templates/-LICENSE",
+      "generators/app/templates/-package.json",
+      "generators/app/templates/-README.md",
+      "generators/app/templates/-tsconfig.json",
+      "generators/app/templates/-tslint.json",
+      "generators/app/templates/-.vscode/-launch.json",
+      "generators/app/templates/-.vscode/-settings.json",
+      "generators/app/templates/-.vscode/-tasks.json",
       "generators/app/app.js",
       "generators/app/index.js"
    ],
-   "keywords": [
-      "yeoman-generator"
-   ],
+   "keywords": ["yeoman-generator"],
    "license": "MIT",
    "scripts": {
       "prepare": "./node_modules/.bin/tsc",
