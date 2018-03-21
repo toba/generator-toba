@@ -1,6 +1,6 @@
 {
    "name": "generator-toba",
-   "version": "1.2.0",
+   "version": "1.2.1",
    "description": "Yeoman Generator for Toba TypeScript modules",
    "preferGlobal": true,
    "homepage": "https://github.com/toba/generator-toba",
@@ -24,9 +24,7 @@
       "generators/app/app.js",
       "generators/app/index.js"
    ],
-   "keywords": [
-      "yeoman-generator"
-   ],
+   "keywords": ["yeoman-generator"],
    "license": "MIT",
    "scripts": {
       "prepare": "./node_modules/.bin/tsc"

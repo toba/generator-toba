@@ -29,6 +29,7 @@ class TobaGenerator extends Generator {
         this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-.gitignore', '-.travis.yml', '-index.ts', '-jest.config.js', '-LICENSE', '-package.json', '-README.md', '-tsconfig.json', '-tslint.json');
     }
     install() {
+        this.yarnInstall();
     }
     defaultName() {
         return this.appname.trim().replace(/\s+/g, '-');
