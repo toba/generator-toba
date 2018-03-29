@@ -70,7 +70,7 @@ export class TobaGenerator extends Generator {
    }
 
    install() {
-      //this.yarnInstall();
+      this.yarnInstall();
    }
 
    private defaultName(): string {

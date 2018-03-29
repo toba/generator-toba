@@ -44,6 +44,7 @@ class TobaGenerator extends Generator {
         mkdirp.sync(this.destinationPath('lib'));
     }
     install() {
+        this.yarnInstall();
     }
     defaultName() {
         return this.appname.trim().replace(/\s+/g, '-');
