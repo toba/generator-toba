@@ -1,4 +1,7 @@
 import * as Generator from 'yeoman-generator';
+import * as mkdirp from 'mkdirp';
+
+const defaultScope = 'toba';
 
 export class TobaGenerator extends Generator {
    /**
@@ -6,30 +9,45 @@ export class TobaGenerator extends Generator {
     * http://ejs.co/
     */
    props = {
-      name: ''
+      name: '',
+      scope: defaultScope
    };
 
    constructor(args: string | string[], options: any) {
       super(args, options);
 
       this.props = {
-         name: this.defaultName()
+         name: this.defaultName(),
+         scope: defaultScope
       };
    }
 
    prompting() {
       const prompts = [
          {
+            type: 'list',
+            name: 'scope',
+            message: 'What is the npm organization name?',
+            choices: [
+               { name: 'Toba', value: 'toba' },
+               { name: 'Trail Image', value: 'trailimage' }
+            ],
+            default: defaultScope
+         },
+         {
             type: 'input',
             name: 'name',
-            message: 'What would you like to name the Toba module?',
-            default: this.defaultName(),
-            validate: (_name: string) => true
+            message: `What would you like to name the ${
+               this.props.scope
+            } module?`,
+            default: this.defaultName()
+            //validate: (_name: string) => true
          }
       ];
 
       return this.prompt(prompts).then(answer => {
          this.props.name = answer['name'];
+         this.props.scope = answer['scope'];
       });
    }
 
@@ -48,10 +66,11 @@ export class TobaGenerator extends Generator {
          '-tsconfig.json',
          '-tslint.json'
       );
+      mkdirp.sync(this.destinationPath('lib'));
    }
 
    install() {
-      this.yarnInstall();
+      //this.yarnInstall();
    }
 
    private defaultName(): string {
