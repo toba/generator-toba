@@ -40,7 +40,7 @@ class TobaGenerator extends Generator {
         });
     }
     writing() {
-        this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-.gitignore', '-.travis.yml', '-index.ts', '-jest.config.js', '-LICENSE', '-package.json', '-README.md', '-tsconfig.json', '-tslint.json');
+        this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-lib/-index.ts', '-.gitignore', '-.travis.yml', '-jest.config.js', '-LICENSE', '-package.json', '-README.md', '-tsconfig.json', '-tslint.json');
         mkdirp.sync(this.destinationPath('lib'));
     }
     install() {

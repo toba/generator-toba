@@ -6,7 +6,7 @@ const defaultScope = 'toba';
 export class TobaGenerator extends Generator {
    /**
     * Template properties to be injected with EJS.
-    * http://ejs.co/
+    * @see http://ejs.co/
     */
    props = {
       name: '',
@@ -56,9 +56,9 @@ export class TobaGenerator extends Generator {
          '-.vscode/-launch.json',
          '-.vscode/-settings.json',
          '-.vscode/-tasks.json',
+         '-lib/-index.ts',
          '-.gitignore',
          '-.travis.yml',
-         '-index.ts',
          '-jest.config.js',
          '-LICENSE',
          '-package.json',
@@ -81,7 +81,7 @@ export class TobaGenerator extends Generator {
    /**
     * Copy template files with optional file rename.
     *
-    * http://yeoman.io/authoring/file-system.html
+    * @see http://yeoman.io/authoring/file-system.html
     */
    private copy(...files: string[]) {
       files.forEach(source => {
