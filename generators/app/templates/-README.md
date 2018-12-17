@@ -5,7 +5,9 @@
 [![DevDependencies](https://img.shields.io/david/dev/<%= scope %>/<%= name %>.svg)](https://david-dm.org/<%= scope %>/<%= name %>#info=devDependencies&view=list)
 [![codecov](https://codecov.io/gh/<%= scope %>/<%= name %>/branch/master/graph/badge.svg)](https://codecov.io/gh/<%= scope %>/<%= name %>)
 
-# Usage
+<img src='https://toba.github.io/about/images/logo-colored.svg' width="100" align="right"/>
+
+# <%= name %>
 
 ```
 yarn add @<%= scope %>/<%= name %> --dev
