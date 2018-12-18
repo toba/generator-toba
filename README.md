@@ -3,6 +3,8 @@
 [![Dependencies](https://img.shields.io/david/toba/generator-toba.svg)](https://david-dm.org/toba/generator-toba)
 [![DevDependencies](https://img.shields.io/david/dev/toba/generator-toba.svg)](https://david-dm.org/toba/generator-toba#info=devDependencies&view=list)
 
+<img src='https://toba.github.io/about/images/logo-colored.svg' width="100" align="right"/>
+
 Yeoman generator for Toba TypeScript modules with standard linting, `tsconfig`, testing, licensing and packaging.
 
 The `package.json` template file must be published with a different name or it affects which files in that folder npm recognizes.
