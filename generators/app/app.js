@@ -1,11 +1,13 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const Generator = require("yeoman-generator");
-const mkdirp = require("mkdirp");
+import * as Generator from 'yeoman-generator';
+import * as mkdirp from 'mkdirp';
 const defaultScope = 'toba';
-class TobaGenerator extends Generator {
+export class TobaGenerator extends Generator {
     constructor(args, options) {
         super(args, options);
+        /**
+         * Template properties to be injected with EJS.
+         * @see http://ejs.co/
+         */
         this.props = {
             name: '',
             scope: defaultScope
@@ -32,6 +34,7 @@ class TobaGenerator extends Generator {
                 name: 'name',
                 message: `What would you like to name the ${this.props.scope} module?`,
                 default: this.defaultName()
+                //validate: (_name: string) => true
             }
         ];
         return this.prompt(prompts).then(answer => {
@@ -47,8 +50,14 @@ class TobaGenerator extends Generator {
         this.yarnInstall();
     }
     defaultName() {
+        // cannot be getter since that causes `this` to be wrong
         return this.appname.trim().replace(/\s+/g, '-');
     }
+    /**
+     * Copy template files with optional file rename.
+     *
+     * @see http://yeoman.io/authoring/file-system.html
+     */
     copy(...files) {
         files.forEach(source => {
             const target = source.replace(/(\/|^)(\-)/g, '$1');
@@ -56,4 +65,3 @@ class TobaGenerator extends Generator {
         });
     }
 }
-exports.TobaGenerator = TobaGenerator;
