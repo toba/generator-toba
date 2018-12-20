@@ -2,8 +2,11 @@
    "extends": "./node_modules/@toba/build/ts/lib-config",
    "compilerOptions": {
       "target": "es6",
-      "outDir": "",
-      "declarationMap": false
+      "outDir": "./generators/app/",
+      "sourceMap": false,
+      "declaration": false,
+      "declarationMap": false,
+      "removeComments": true
    },
    "include": ["generators/**/*.ts"],
    "exclude": ["node_modules", "generators/app/templates"]
