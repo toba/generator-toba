@@ -1,7 +1,9 @@
-import * as Generator from 'yeoman-generator';
-import * as mkdirp from 'mkdirp';
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Generator = require("yeoman-generator");
+const mkdirp = require("mkdirp");
 const defaultScope = 'toba';
-export class TobaGenerator extends Generator {
+class TobaGenerator extends Generator {
     constructor(args, options) {
         super(args, options);
         this.props = {
@@ -54,3 +56,4 @@ export class TobaGenerator extends Generator {
         });
     }
 }
+exports.TobaGenerator = TobaGenerator;
