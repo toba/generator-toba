@@ -15,7 +15,7 @@
    "types:": "dist/index.d.ts",
    "files": ["dist/**/*"],
    "scripts": {
-      "prepublishOnly": "./node_modules/.bin/tsc",
+      "prepublishOnly": "./node_modules/.bin/tsc --project tsconfig.build.json",
       "test": "jest --coverage"
    },
    "devDependencies": {
@@ -25,12 +25,5 @@
    "repository": {
       "type": "git",
       "url": "https://github.com/<%= scope %>/<%= name %>"
-   },
-   "bugs": {
-      "url": "https://github.com/<%= scope %>/<%= name %>/issues"
-   },
-   "prettier": {
-      "singleQuote": true,
-      "tabWidth": 3
    }
 }

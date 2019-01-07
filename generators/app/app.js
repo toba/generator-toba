@@ -1,12 +1,10 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const Generator = require("yeoman-generator");
-const mkdirp = require("mkdirp");
+import * as Generator from 'yeoman-generator';
+import * as mkdirp from 'mkdirp';
 const defaultScope = 'toba';
-class TobaGenerator extends Generator {
+export class TobaGenerator extends Generator {
     constructor(args, options) {
         super(args, options);
-        this.props = { 
+        this.props = {
             name: '',
             scope: defaultScope
         };
@@ -40,7 +38,7 @@ class TobaGenerator extends Generator {
         });
     }
     writing() {
-        this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-lib/-index.ts', '-.gitignore', '-.travis.yml', '-jest.config.js', '-LICENSE', '-package.json', '-README.md', '-tsconfig.json', '-tslint.json');
+        this.copy('-.vscode/-launch.json', '-.vscode/-settings.json', '-.vscode/-tasks.json', '-lib/-index.ts', '-.gitignore', '-.travis.yml', '-jest.config.js', '-LICENSE', '-package.json', '-prettier.config.js', '-README.md', '-tsconfig.json', '-tsconfig.build.json', '-tslint.json');
         mkdirp.sync(this.destinationPath('lib'));
     }
     install() {
@@ -56,4 +54,3 @@ class TobaGenerator extends Generator {
         });
     }
 }
-exports.TobaGenerator = TobaGenerator;

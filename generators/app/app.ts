@@ -62,8 +62,10 @@ export class TobaGenerator extends Generator {
          '-jest.config.js',
          '-LICENSE',
          '-package.json',
+         '-prettier.config.js',
          '-README.md',
          '-tsconfig.json',
+         '-tsconfig.build.json',
          '-tslint.json'
       );
       mkdirp.sync(this.destinationPath('lib'));
