@@ -56,7 +56,7 @@ export class TobaGenerator extends Generator {
          '-.vscode/-launch.json',
          '-.vscode/-settings.json',
          '-.vscode/-tasks.json',
-         '-lib/-index.ts',
+         '-src/-index.ts',
          '-.gitignore',
          '-.travis.yml',
          '-jest.config.js',
