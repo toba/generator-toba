@@ -1,6 +1,6 @@
 {
    "name": "generator-toba",
-   "version": "1.7.5",
+   "version": "1.7.6",
    "description": "Yeoman Generator for Toba TypeScript modules",
    "preferGlobal": true,
    "homepage": "https://github.com/toba/generator-toba",

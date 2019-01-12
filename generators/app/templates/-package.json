@@ -1,11 +1,11 @@
 {
-   "name": "@toba/user",
+   "name": "@<%= scope %>/<%= name %>",
    "version": "1.0.0",
-   "description": "toba user module",
+   "description": "<%= scope %> <%= name %> module",
    "private": false,
    "author": {
       "name": "Jason Abbott",
-      "url": "http://github.com/toba"
+      "url": "http://github.com/<%= scope %>"
    },
    "license": "MIT",
    "publishConfig": {
@@ -24,6 +24,6 @@
    },
    "repository": {
       "type": "git",
-      "url": "https://github.com/toba/user"
+      "url": "https://github.com/<%= scope %>/<%= name %>"
    }
 }

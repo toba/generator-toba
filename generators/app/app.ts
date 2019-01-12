@@ -68,7 +68,7 @@ export class TobaGenerator extends Generator {
          '-tsconfig.build.json',
          '-tslint.json'
       );
-      mkdirp.sync(this.destinationPath('lib'));
+      mkdirp.sync(this.destinationPath('src'));
    }
 
    install() {
