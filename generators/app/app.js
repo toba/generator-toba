@@ -86,11 +86,11 @@ class TobaGenerator extends Generator {
         }
         files.forEach(source => {
             const target = source.replace(/(\/|^)(\-)/g, '$1');
-            console.log('\n' + this.templatePath(source), '\n' + this.destinationPath(target));
             this.fs.copyTpl(this.templatePath(source), this.destinationPath(target), this.props);
         });
     }
     install() {
+        this.yarnInstall();
     }
     defaultName() {
         return this.appname.trim().replace(/\s+/g, '-');
