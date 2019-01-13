@@ -7,8 +7,6 @@
 
 Yeoman generator for Toba TypeScript modules with standard linting, `tsconfig`, testing, licensing and packaging.
 
-The `package.json` template file must be published with a different name or it affects which files in that folder npm recognizes.
-
 ## Usage
 
 ### Install Yeoman and the Toba Generator
