@@ -1,7 +1,22 @@
 import * as Generator from 'yeoman-generator';
-import * as mkdirp from 'mkdirp';
 
 const defaultScope = 'toba';
+
+/**
+ * https://yeoman.io/authoring/user-interactions.html
+ */
+enum PromptType {
+   /** @see https://github.com/SBoudrias/Inquirer.js/#input---type-input */
+   Input = 'input',
+   /** @see https://github.com/SBoudrias/Inquirer.js/#confirm---type-confirm */
+   Confirm = 'confirm',
+   /** @see https://github.com/SBoudrias/Inquirer.js/#list---type-list */
+   List = 'list',
+   /** @see https://github.com/SBoudrias/Inquirer.js/#raw-list---type-rawlist */
+   RawList = 'rawlist',
+   /** @see https://github.com/SBoudrias/Inquirer.js/#password---type-password */
+   Password = 'password'
+}
 
 export class TobaGenerator extends Generator {
    /**
@@ -10,7 +25,8 @@ export class TobaGenerator extends Generator {
     */
    props = {
       name: '',
-      scope: defaultScope
+      scope: defaultScope,
+      example: false
    };
 
    constructor(args: string | string[], options: any) {
@@ -18,14 +34,15 @@ export class TobaGenerator extends Generator {
 
       this.props = {
          name: this.defaultName(),
-         scope: defaultScope
+         scope: defaultScope,
+         example: false
       };
    }
 
-   prompting() {
-      const prompts = [
+   async prompting() {
+      const prompts: Generator.Question[] = [
          {
-            type: 'list',
+            type: PromptType.List,
             name: 'scope',
             message: 'What is the npm organization name?',
             choices: [
@@ -35,24 +52,35 @@ export class TobaGenerator extends Generator {
             default: defaultScope
          },
          {
-            type: 'input',
+            type: PromptType.Input,
             name: 'name',
             message: `What would you like to name the ${
                this.props.scope
             } module?`,
             default: this.defaultName()
-            //validate: (_name: string) => true
+         },
+         {
+            type: PromptType.Confirm,
+            name: 'example',
+            message: 'Include React Example App?',
+            default: false
          }
       ];
 
-      return this.prompt(prompts).then(answer => {
-         this.props.name = answer['name'];
-         this.props.scope = answer['scope'];
-      });
+      const answer = await this.prompt(prompts);
+
+      this.props.name = answer['name'];
+      this.props.scope = answer['scope'];
+      this.props.example = answer['example'];
    }
 
+   /**
+    * Copy template files with optional file rename.
+    *
+    * @see http://yeoman.io/authoring/file-system.html
+    */
    writing() {
-      this.copy(
+      const files = [
          '-.vscode/-launch.json',
          '-.vscode/-settings.json',
          '-.vscode/-tasks.json',
@@ -67,8 +95,20 @@ export class TobaGenerator extends Generator {
          '-tsconfig.json',
          '-tsconfig.build.json',
          '-tslint.json'
-      );
-      mkdirp.sync(this.destinationPath('src'));
+      ];
+
+      if (this.props.example) {
+         files.push('-examples/-webpack.config.ts', '-examples/-src/-app.tsx');
+      }
+
+      files.forEach(source => {
+         const target = source.replace(/(\/|^)(\-)/g, '$1');
+         this.fs.copyTpl(
+            this.templatePath(source),
+            this.destinationPath(target),
+            this.props
+         );
+      });
    }
 
    install() {
@@ -78,21 +118,5 @@ export class TobaGenerator extends Generator {
    private defaultName(): string {
       // cannot be getter since that causes `this` to be wrong
       return this.appname.trim().replace(/\s+/g, '-');
-   }
-
-   /**
-    * Copy template files with optional file rename.
-    *
-    * @see http://yeoman.io/authoring/file-system.html
-    */
-   private copy(...files: string[]) {
-      files.forEach(source => {
-         const target = source.replace(/(\/|^)(\-)/g, '$1');
-         this.fs.copyTpl(
-            this.templatePath(source),
-            this.destinationPath(target),
-            this.props
-         );
-      });
    }
 }

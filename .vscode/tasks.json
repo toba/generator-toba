@@ -18,6 +18,22 @@
          "type": "shell",
          "group": "none",
          "problemMatcher": []
+      },
+      {
+         "label": "Link local copy to global",
+         "command": "npm",
+         "args": ["link"],
+         "type": "shell",
+         "group": "none",
+         "problemMatcher": []
+      },
+      {
+         "label": "Unlink",
+         "command": "npm",
+         "args": ["unlink"],
+         "type": "shell",
+         "group": "none",
+         "problemMatcher": []
       }
    ]
 }

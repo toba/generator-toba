@@ -47,6 +47,33 @@
             "panel": "shared"
          },
          "problemMatcher": []
-      }
+      }<% if (example) { %>,
+      {
+         "label": "View Examples",
+         "options": {
+            "cwd": "${workspaceFolder}/examples"
+         },
+         "command": "${workspaceFolder}/node_modules/.bin/webpack-dev-server",
+         "type": "shell",
+         "group": "test",
+         "problemMatcher": []
+      },
+      {
+         "label": "Bundle Example Files",
+         "options": {
+            "cwd": "${workspaceFolder}/examples"
+         },
+         "presentation": {
+            "showReuseMessage": false,
+            "clear": true
+         },
+         "command": "${workspaceFolder}/node_modules/.bin/webpack",
+         "type": "process",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "problemMatcher": []
+      }<% } %>
    ]
 }
