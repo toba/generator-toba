@@ -1,3 +1,4 @@
+"use strict";
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
@@ -6,7 +7,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-import * as Generator from 'yeoman-generator';
+Object.defineProperty(exports, "__esModule", { value: true });
+const Generator = require("yeoman-generator");
 const defaultScope = 'toba';
 var PromptType;
 (function (PromptType) {
@@ -16,7 +18,7 @@ var PromptType;
     PromptType["RawList"] = "rawlist";
     PromptType["Password"] = "password";
 })(PromptType || (PromptType = {}));
-export class TobaGenerator extends Generator {
+class TobaGenerator extends Generator {
     constructor(args, options) {
         super(args, options);
         this.props = {
@@ -94,3 +96,4 @@ export class TobaGenerator extends Generator {
         return this.appname.trim().replace(/\s+/g, '-');
     }
 }
+exports.TobaGenerator = TobaGenerator;
