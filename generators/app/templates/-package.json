@@ -22,7 +22,7 @@
       "test": "jest --coverage"
    },
    "devDependencies": {
-      "@toba/develop": "^4.0.0",
+      "@toba/develop": "^5.0.0",
 <% if (example) { %>      "@toba/example": "^1.0.0",
 <% } %>      "@toba/test": "^3.0.0"
    },

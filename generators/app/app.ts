@@ -85,6 +85,7 @@ export class TobaGenerator extends Generator {
          '-.vscode/-settings.json',
          '-.vscode/-tasks.json',
          '-src/-index.ts',
+         '-.eslintrc',
          '-.gitignore',
          '-.travis.yml',
          '-jest.config.js',
@@ -93,12 +94,11 @@ export class TobaGenerator extends Generator {
          '-prettier.config.js',
          '-README.md',
          '-tsconfig.json',
-         '-tsconfig.build.json',
-         '-tslint.json'
+         '-tsconfig.build.json'
       ];
 
       if (this.props.example) {
-         files.push('-examples/-webpack.config.ts', '-examples/-src/-app.tsx');
+         files.push('-examples/-web/-app.tsx');
       }
 
       files.forEach(source => {
