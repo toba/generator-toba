@@ -7,8 +7,11 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
-const Generator = require("yeoman-generator");
+const yeoman_generator_1 = __importDefault(require("yeoman-generator"));
 const defaultScope = 'toba';
 var PromptType;
 (function (PromptType) {
@@ -18,7 +21,7 @@ var PromptType;
     PromptType["RawList"] = "rawlist";
     PromptType["Password"] = "password";
 })(PromptType || (PromptType = {}));
-class TobaGenerator extends Generator {
+class TobaGenerator extends yeoman_generator_1.default {
     constructor(args, options) {
         super(args, options);
         this.props = {
@@ -70,6 +73,7 @@ class TobaGenerator extends Generator {
             '-.vscode/-settings.json',
             '-.vscode/-tasks.json',
             '-src/-index.ts',
+            '-.eslintrc',
             '-.gitignore',
             '-.travis.yml',
             '-jest.config.js',
@@ -78,11 +82,10 @@ class TobaGenerator extends Generator {
             '-prettier.config.js',
             '-README.md',
             '-tsconfig.json',
-            '-tsconfig.build.json',
-            '-tslint.json'
+            '-tsconfig.build.json'
         ];
         if (this.props.example) {
-            files.push('-examples/-webpack.config.ts', '-examples/-src/-app.tsx');
+            files.push('-examples/-web/-app.tsx');
         }
         files.forEach(source => {
             const target = source.replace(/(\/|^)(\-)/g, '$1');

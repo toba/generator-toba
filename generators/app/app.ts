@@ -1,4 +1,4 @@
-import * as Generator from 'yeoman-generator';
+import Generator from 'yeoman-generator';
 
 const defaultScope = 'toba';
 
