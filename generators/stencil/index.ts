@@ -1,6 +1,6 @@
 import { TobaGenerator } from '../';
 
-export class StencilAppGenerator extends TobaGenerator {
+class StencilAppGenerator extends TobaGenerator {
    constructor(args: string | string[], options: any) {
       super(args, options);
 
@@ -14,3 +14,5 @@ export class StencilAppGenerator extends TobaGenerator {
       ];
    }
 }
+
+export = StencilAppGenerator;
