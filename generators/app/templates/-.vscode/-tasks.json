@@ -47,47 +47,6 @@
             "panel": "shared"
          },
          "problemMatcher": []
-      }<% if (example) { %>,
-      {
-         "label": "Example: Bundle",
-         "command": "${workspaceFolder}/node_modules/.bin/webpack",
-         "options": {
-            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
-         },
-         "presentation": {
-            "echo": false,
-            "showReuseMessage": false,
-            "clear": true
-         },
-         "type": "shell",
-         "problemMatcher": []
-      },
-      {
-         "label": "Example: Web",
-         "command": "${workspaceFolder}/node_modules/.bin/webpack-dev-server",
-         "options": {
-            "cwd": "${workspaceFolder}/node_modules/@toba/example/build"
-         },
-         "type": "shell",
-         "problemMatcher": []
-      },
-      {
-         "label": "Example: iOS",
-         "command": "${workspaceFolder}/node_modules/.bin/expo",
-         "args": ["start", "--ios"],
-         "options": {
-            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
-         },
-         "problemMatcher": []
-      },
-      {
-         "label": "Example: Android",
-         "command": "${workspaceFolder}/node_modules/.bin/expo",
-         "args": ["start", "--android"],
-         "options": {
-            "cwd": "${workspaceFolder}/node_modules/@toba/example/"
-         },
-         "problemMatcher": []
-      }<% } %>
+      }
    ]
 }

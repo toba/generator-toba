@@ -1,7 +1,5 @@
+.stencil/
 node_modules/
-coverage/
 dist/
 www/
-cjs/
-esm/
 package-lock.json

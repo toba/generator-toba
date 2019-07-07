@@ -1,0 +1,49 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "Build",
+         "command": "./node_modules/.bin/stencil",
+         "args": ["build"],
+         "type": "shell",
+         "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": true
+         },
+         "problemMatcher": []
+      },
+      {
+         "label": "Run Test Site",
+         "type": "shell",
+         "command": "./node_modules/.bin/stencil",
+         "args": ["build", "--dev", "--watch", "--serve"],
+         "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": true
+         },
+         "problemMatcher": []
+      },
+      {
+         "label": "Import SVG",
+         "command": "node",
+         "args": ["./node_modules/@toba/style/bin/import-svg.js"],
+         "presentation": {
+            "echo": false,
+            "reveal": "always",
+            "focus": false,
+            "panel": "shared",
+            "showReuseMessage": true,
+            "clear": true
+         },
+         "problemMatcher": []
+      }
+   ]
+}

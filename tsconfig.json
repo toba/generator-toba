@@ -2,12 +2,12 @@
    "extends": "@toba/develop/tsconfig.cjs",
    "compilerOptions": {
       "target": "es6",
-      "outDir": "./generators/app/",
+      "outDir": "generators",
       "sourceMap": false,
       "declaration": false,
       "declarationMap": false,
       "removeComments": true
    },
    "include": ["generators/**/*.ts"],
-   "exclude": ["node_modules", "generators/app/templates"]
+   "exclude": ["node_modules", "generators/**/templates"]
 }

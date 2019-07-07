@@ -1,0 +1,40 @@
+{
+   "name": "@<%= scope %>/<%= name %>",
+   "version": "1.0.0",
+   "description": "<%= scope %> <%= name %> module",
+   "private": false,
+   "author": {
+      "name": "Jason Abbott",
+      "url": "http://github.com/<%= scope %>"
+   },
+   "license": "MIT",
+   "publishConfig": {
+      "access": "public"
+   },
+   "main": "dist/index.js",
+   "module": "dist/index.mjs",
+   "es2015": "dist/esm/index.mjs",
+   "es2017": "dist/esm/index.mjs",
+   "types": "dist/types/components.d.ts",
+   "collection": "dist/collection/collection-manifest.json",
+   "files": ["dist"],
+   "scripts": {
+      "build": "stencil build",
+      "start": "stencil build --dev --watch --serve",
+      "test": "stencil test --spec --e2e",
+      "test.watch": "stencil test --spec --e2e --watchAll"
+   },
+   "dependencies": {
+      "@stencil/core": "^1.1.5",
+      "@stencil/sass": "^1.0.1",
+      "@toba/say": "^1.0.0"
+   },
+   "devDependencies": {
+      "@toba/develop": "^6.5.3",
+      "@toba/style": "^1.9.6"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/<%= scope %>/<%= name %>"
+   }
+}

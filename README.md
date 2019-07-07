@@ -11,15 +11,6 @@ Yeoman generator for Toba TypeScript modules with standard linting, `tsconfig`, 
 
 ### Install Yeoman and the Toba Generator
 
-Yarn
-
-```bash
-yarn global add yo
-yarn global add generator-toba
-```
-
-or npm
-
 ```bash
 npm install -g yo
 npm install -g generator-toba
@@ -35,6 +26,12 @@ yarn global upgrade
 
 ```bash
 yo toba
+```
+
+or
+
+```bash
+yo toba:stencil
 ```
 
 ## Development

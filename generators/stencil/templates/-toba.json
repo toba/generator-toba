@@ -1,0 +1,11 @@
+{
+   "svgImport": {
+      "writeEachFile": false,
+      "writeSymbolFile": false,
+      "updateIndexFile": true,
+      "removeEmbeddedStyle": false,
+      "outputPath": "./src/assets",
+      "htmlIndexFile": "./src/index.html",
+      "files": {}
+   }
+}
