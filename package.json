@@ -1,33 +1,33 @@
 {
-  "name": "generator-toba",
-  "version": "2.1.0",
-  "description": "Yeoman Generator for Toba TypeScript modules",
-  "preferGlobal": true,
-  "homepage": "https://github.com/toba/generator-toba",
-  "author": {
-    "name": "Jason Abbott",
-    "url": "http://github.com/toba"
-  },
-  "files": [
-    "generators"
-  ],
-  "keywords": [
-    "yeoman-generator"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "prepare": "./node_modules/.bin/tsc"
-  },
-  "dependencies": {
-    "yeoman-generator": "^4.0.0"
-  },
-  "devDependencies": {
-    "@toba/develop": "^6.6.1",
-    "@types/node": "^12.6.8",
-    "@types/yeoman-generator": "^3.0.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/toba/generator-toba"
-  }
+   "name": "generator-toba",
+   "version": "2.1.1",
+   "description": "Yeoman Generator for Toba TypeScript modules",
+   "preferGlobal": true,
+   "homepage": "https://github.com/toba/generator-toba",
+   "author": {
+      "name": "Jason Abbott",
+      "url": "http://github.com/toba"
+   },
+   "files": [
+      "generators"
+   ],
+   "keywords": [
+      "yeoman-generator"
+   ],
+   "license": "MIT",
+   "scripts": {
+      "prepare": "./node_modules/.bin/tsc"
+   },
+   "dependencies": {
+      "yeoman-generator": "^4.0.0"
+   },
+   "devDependencies": {
+      "@toba/develop": "^6.6.1",
+      "@types/node": "^12.6.8",
+      "@types/yeoman-generator": "^3.0.1"
+   },
+   "repository": {
+      "type": "git",
+      "url": "https://github.com/toba/generator-toba"
+   }
 }
