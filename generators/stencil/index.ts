@@ -11,7 +11,9 @@ class StencilGenerator extends Generator implements TobaGenerator {
    context = {};
    files = [
       '.stylelintrc',
-      // 'src/components',
+      'src/components',
+      'src/components/app-settings.scss',
+      'src/components/app-settings.tsx',
       // 'src/global',
       'src/index.html',
       'stencil.config.ts',

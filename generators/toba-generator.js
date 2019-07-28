@@ -8,14 +8,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-var PromptType;
-(function (PromptType) {
-    PromptType["Input"] = "input";
-    PromptType["Confirm"] = "confirm";
-    PromptType["List"] = "list";
-    PromptType["RawList"] = "rawlist";
-    PromptType["Password"] = "password";
-})(PromptType || (PromptType = {}));
 const defaultScope = 'toba';
 const commonFiles = [
     '.vscode/launch.json',
@@ -43,7 +35,7 @@ function prompt(g) {
     return __awaiter(this, void 0, void 0, function* () {
         const prompts = [
             {
-                type: PromptType.List,
+                type: "list",
                 name: 'scope',
                 message: 'What is the npm organization name?',
                 choices: [
@@ -53,7 +45,7 @@ function prompt(g) {
                 default: defaultScope
             },
             {
-                type: PromptType.Input,
+                type: "input",
                 name: 'name',
                 message: `What would you like to name the ${g.context.scope} module?`,
                 default: projectName(g)

@@ -18,6 +18,9 @@ class StencilGenerator extends yeoman_generator_1.default {
         this.context = {};
         this.files = [
             '.stylelintrc',
+            'src/components',
+            'src/components/app-settings.scss',
+            'src/components/app-settings.tsx',
             'src/index.html',
             'stencil.config.ts',
             'toba.json'

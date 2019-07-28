@@ -3,7 +3,7 @@ import Generator from 'yeoman-generator';
 /**
  * https://yeoman.io/authoring/user-interactions.html
  */
-enum PromptType {
+const enum PromptType {
    /** @see https://github.com/SBoudrias/Inquirer.js/#input---type-input */
    Input = 'input',
    /** @see https://github.com/SBoudrias/Inquirer.js/#confirm---type-confirm */
