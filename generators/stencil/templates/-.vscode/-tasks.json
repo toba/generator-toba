@@ -17,7 +17,7 @@
          "problemMatcher": []
       },
       {
-         "label": "Run Test Site",
+         "label": "Run Demo Site",
          "type": "shell",
          "command": "./node_modules/.bin/stencil",
          "args": ["build", "--dev", "--watch", "--serve"],
@@ -45,7 +45,6 @@
          },
          "problemMatcher": []
       },
-      ,
       {
          "label": "Publish",
          "command": "npm",
